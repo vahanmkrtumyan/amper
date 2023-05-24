@@ -16,7 +16,7 @@ export default function About() {
               <ul>
                 <li>
                   <Link href="/">
-                    <a>Glax Home</a>
+                    <a>Amperlax Home</a>
                   </Link>
                 </li>
                 <li className="shape">
