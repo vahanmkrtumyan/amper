@@ -1,9 +1,19 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function TopBar({ isTopbar, activeTopbar }) {
   const [isActive, setActive] = useState(false);
   const activeTrueFalse = () => setActive(!isActive);
-  const [isSelect, setSelect] = useState("Eng");
+  const { locale, push } = useRouter();
+  const router = useRouter();
+
+  console.log(router);
+
+  const localeLabel = {
+    en: "Eng",
+    hy: "Arm",
+    ru: "Rus",
+  };
 
   return (
     <>
@@ -11,14 +21,26 @@ export default function TopBar({ isTopbar, activeTopbar }) {
       <div className="lang_Switcher_dropdown_wrap">
         <div className={`lang_box ${isActive ? "opened" : ""}`}>
           <ul onClick={activeTrueFalse}>
-            <li onClick={() => setSelect("Eng")}>
-              <span className={isSelect == "Eng" ? "selected" : ""}>Eng</span>
+            <li
+              onClick={() =>
+                push(router.pathname, router.pathname, { locale: "en" })
+              }
+            >
+              <span className={locale == "en" ? "selected" : ""}>Eng</span>
             </li>
-            <li onClick={() => setSelect("Arm")}>
-              <span className={isSelect == "Arm" ? "selected" : ""}>Arm</span>
+            <li
+              onClick={() =>
+                push(router.pathname, router.pathname, { locale: "hy" })
+              }
+            >
+              <span className={locale == "hy" ? "selected" : ""}>Arm</span>
             </li>
-            <li onClick={() => setSelect("Rus")}>
-              <span className={isSelect == "Rus" ? "selected" : ""}>Rus</span>
+            <li
+              onClick={() =>
+                push(router.pathname, router.pathname, { locale: "ru" })
+              }
+            >
+              <span className={locale == "ru" ? "selected" : ""}>Rus</span>
             </li>
           </ul>
         </div>
@@ -46,7 +68,7 @@ export default function TopBar({ isTopbar, activeTopbar }) {
               <div className="lang_Switcher_wrap">
                 <div onClick={activeTrueFalse} className="language">
                   <a className="selected" href="#">
-                    {isSelect}
+                    {localeLabel[locale]}
                   </a>
                 </div>
               </div>

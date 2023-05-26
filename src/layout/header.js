@@ -70,11 +70,6 @@ export default function Header({ style }) {
                 </li>
               </ul>
             </div>
-            <div className="purchase_button">
-              <a href="https://themeforest.net/user/trendycoder/portfolio">
-                Purchase now
-              </a>
-            </div>
           </div>
         </div>
       </div>
