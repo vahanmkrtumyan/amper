@@ -494,7 +494,7 @@ img.svg {
   font-family: "Montserrat";
 }
 .prev_next {
-  display: inline-block;
+  display: none;
   transform: rotate(180deg);
 }
 .prev_next > div {
@@ -1762,9 +1762,12 @@ img.svg {
   height: 240px;
   border: 10px solid #ad3110;
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 13px 20px 10px 18px;
+  color: #f5f5f5;
+  font-size: 20px;
 }
 .glax_tm_introduce_wrap .experience_box .top p {
   margin: 0px;
