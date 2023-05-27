@@ -4,17 +4,45 @@ import { useRouter } from "next/router";
 
 const content = {
   en: {
+    addressLabel: "Address",
     address: "2214 RA, Kotayk province, town Byureghavan, 49 Z. Andranik str",
+    phone: "Phone",
+    email: "Email",
+    workingHours: "Working Hours",
+    workingHoursText: "Our business hours are listed below",
+    monFri: "Monday-Friday:",
+    saturday: "Saturday",
+    sunday: "Sunday",
+    closed: "Closed",
   },
   ru: {
+    addressLabel: "Адрес",
     address: "2214 РА, Котайкский регион,г. Бюрегаван, ул. З. Андраника 49",
+    phone: "Телефон",
+    email: "Эл. адрес",
+    workingHours: "Рабочие часы",
+    workingHoursText: "Рабочие часы указаны ниже",
+    monFri: "Понедельник Пятница:",
+    saturday: "Суббота",
+    sunday: "Воскресенье",
+    closed: "Закрыто",
   },
-  hy: { address: "ՀՀ, Կոտայիք մարզ, Ք․ Բյուրեղավան, Զ․ Անդրանիկի 49, 2214" },
+  hy: {
+    addressLabel: "Հասցե",
+    address: "ՀՀ, Կոտայիք մարզ, Ք․ Բյուրեղավան, Զ․ Անդրանիկի 49, 2214",
+    phone: "Հեռախոս",
+    email: "Էլ․ հասցե",
+    workingHours: "Աշխատանքային ժամեր",
+    workingHoursText: "Մեր աշխատանքային ժամերը ներկայացված են ստորև",
+    monFri: "Երկուշաբթի-ուրբաթ",
+    saturday: "Շաբաթ",
+    sunday: "Կիրակի",
+    closed: "Փակ է",
+  },
 };
 
 export default function Siderbar({ isTopbar, activeTopbar }) {
-  const { locale, locales, defaultLocale } = useRouter();
-  console.log({ locale, locales });
+  const { locale } = useRouter();
   return (
     <>
       <div className={`glax_tm_widget_wrap ${isTopbar !== 0 ? "opened" : ""}`}>
@@ -56,12 +84,12 @@ export default function Siderbar({ isTopbar, activeTopbar }) {
                   <img src="img/contact/1.jpg" alt="" />
                 </div>
                 <div className="definitions_wrap">
-                  <h3>Head Office in New-York</h3>
+                  <h3>{content[locale].addressLabel}</h3>
                   <p>{content[locale].address}</p>
-                  <p>Phone: +1 202-415-7234</p>
+                  <p>{content[locale].phone}: +374 77 905885</p>
                   <p>
-                    <span>Email:</span>
-                    <a href="#">w.constructify@gmail.com</a>
+                    <span>{content[locale].email}:</span>
+                    <a href="#">contact@tga-amper.am</a>
                   </p>
                 </div>
               </div>
@@ -112,9 +140,9 @@ export default function Siderbar({ isTopbar, activeTopbar }) {
                 <div className="image">
                   <img src="img/estimate/call.png" alt="" />
                 </div>
-                <h3>Toll Free</h3>
+                <h3>{content[locale].phone}</h3>
                 <p>
-                  <a href="tel:18009876543">1-800-987-6543</a>
+                  <a href="tel:37477905885">+374 77 905885</a>
                 </p>
               </div>
             </div>
@@ -125,24 +153,21 @@ export default function Siderbar({ isTopbar, activeTopbar }) {
               }
             >
               <div className="working_hours_wrap_short">
-                <h3>Working Hours</h3>
-                <p className="subtitle">
-                  We are happy to meet you during our working hours. Please make
-                  an appointment.
-                </p>
+                <h3>{content[locale].workingHours}</h3>
+                <p className="subtitle">{content[locale].workingHoursText}</p>
                 <div className="hour_list">
                   <ul>
                     <li>
-                      <span className="left">Monday-Friday:</span>
+                      <span className="left">{content[locale].monFri}</span>
                       <span className="right">10:00 - 19:00</span>
                     </li>
                     <li>
-                      <span className="left">Saturday:</span>
-                      <span className="right">Closed</span>
+                      <span className="left">{content[locale].saturday}:</span>
+                      <span className="right">{content[locale].closed}</span>
                     </li>
                     <li>
-                      <span className="left">Sunday:</span>
-                      <span className="right">Closed</span>
+                      <span className="left">{content[locale].sunday}:</span>
+                      <span className="right">{content[locale].closed}</span>
                     </li>
                   </ul>
                 </div>

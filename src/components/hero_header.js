@@ -1,6 +1,7 @@
 import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useRouter } from "next/router";
 
 // Import Swiper styles
 import "swiper/css";
@@ -10,11 +11,28 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination, Navigation } from "swiper";
 
+const content = {
+  en: {
+    header: "We are more than industrial company",
+    text: "The foundations and aspirations of our business remain true to those established by our visionary founders, and their innovation and energy continue to be our inspiration. Our passion and entrepreneurial culture will ensure that we deliver for our customers in safety, quality and assurance – today and in the future.",
+  },
+  ru: {
+    header: "Мы больше, чем промышленная компания",
+    text: "Основы и устремления нашего бизнеса остаются верными тем, что заложили наши дальновидные основатели, а их инновации и энергия продолжают служить нам источником вдохновения. Наша страсть и предпринимательская культура гарантируют, что мы поставляем нашим клиентам безопасность, качество и гарантии - сегодня и в будущем.",
+  },
+  hy: {
+    header: "Մենք ավելին ենք, քան արդյունաբերական ընկերություն",
+    text: "Մեր բիզնեսի հիմքերն ու ձգտումները հավատարիմ են մնում մեր հեռատես հիմնադիրների կողմից հաստատված մոտեցումնեևիբ, և նրանց նորարարությունն ու էներգիան շարունակում են մնալ մեր ոգեշնչումը: Մեր կիրքն ու ձեռնարկատիրական մշակույթը կապահովեն, որ մենք մեր հաճախորդներին մատուցենք անվտանգություն, որակ և երաշխիք՝ այսօր և ապագայում:",
+  },
+};
+
 export default function HeroHeader() {
+  const { locale } = useRouter();
+
   const slide = [
     {
       img: "1.jpg",
-      header: "We are more than industrial company",
+      header: content[locale].header,
       content:
         "The foundations and aspirations of our business remain true to those established by our visionary founders, and their innovation and energy continue to be our inspiration. Our passion and entrepreneurial culture will ensure that we deliver for our customers in safety, quality and assurance – today and in the future.",
     },
@@ -88,15 +106,8 @@ export default function HeroHeader() {
           <div className="container">
             <div className="swiper_content">
               <div className="texts_wrap">
-                <h3>We are more than industrial company</h3>
-                <p>
-                  The foundations and aspirations of our business remain true to
-                  those established by our visionary founders, and their
-                  innovation and energy continue to be our inspiration. Our
-                  passion and entrepreneurial culture will ensure that we
-                  deliver for our customers in safety, quality and assurance –
-                  today and in the future.
-                </p>
+                <h3>{content[locale].header}</h3>
+                <p>{content[locale].text}</p>
               </div>
               <div className="switches">
                 <div className="prev_next">

@@ -434,8 +434,7 @@ img.svg {
 }
 .glax_tm_hero_header_wrap .swiper_content .texts_wrap h3 {
   font-family: "Rubik";
-  font-size: 60px;
-  text-transform: capitalize;
+  font-size: 40px;
   line-height: 1;
   color: #fff;
   letter-spacing: 0px;
@@ -837,8 +836,8 @@ img.svg {
   top: 2px;
 }
 .glax_tm_mobile_bar_wrap .mobile_topbar_wrap .short_info_wrap ul li a .svg {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
 }
 .glax_tm_mobile_bar_wrap .mobile_topbar_wrap .mobile_socials_wrap ul {
   margin: 0px;

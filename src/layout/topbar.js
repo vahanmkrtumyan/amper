@@ -4,10 +4,7 @@ import { useRouter } from "next/router";
 export default function TopBar({ isTopbar, activeTopbar }) {
   const [isActive, setActive] = useState(false);
   const activeTrueFalse = () => setActive(!isActive);
-  const { locale, push } = useRouter();
-  const router = useRouter();
-
-  console.log(router);
+  const { locale, push, pathname } = useRouter();
 
   const localeLabel = {
     en: "Eng",
@@ -21,25 +18,13 @@ export default function TopBar({ isTopbar, activeTopbar }) {
       <div className="lang_Switcher_dropdown_wrap">
         <div className={`lang_box ${isActive ? "opened" : ""}`}>
           <ul onClick={activeTrueFalse}>
-            <li
-              onClick={() =>
-                push(router.pathname, router.pathname, { locale: "en" })
-              }
-            >
+            <li onClick={() => push(pathname, pathname, { locale: "en" })}>
               <span className={locale == "en" ? "selected" : ""}>Eng</span>
             </li>
-            <li
-              onClick={() =>
-                push(router.pathname, router.pathname, { locale: "hy" })
-              }
-            >
+            <li onClick={() => push(pathname, pathname, { locale: "hy" })}>
               <span className={locale == "hy" ? "selected" : ""}>Arm</span>
             </li>
-            <li
-              onClick={() =>
-                push(router.pathname, router.pathname, { locale: "ru" })
-              }
-            >
+            <li onClick={() => push(pathname, pathname, { locale: "ru" })}>
               <span className={locale == "ru" ? "selected" : ""}>Rus</span>
             </li>
           </ul>

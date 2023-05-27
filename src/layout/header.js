@@ -1,6 +1,16 @@
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { useRouter } from "next/router";
+
+const content = {
+  en: { home: "Home" },
+  hy: { home: "Գլխավոր" },
+  ru: { home: "Главное" },
+};
 
 export default function Header({ style }) {
+  const { locale, push, pathname } = useRouter();
   return (
     <>
       {/* HEADER */}
@@ -15,20 +25,32 @@ export default function Header({ style }) {
               <ul>
                 <li>
                   <div className="logo_wrap">
-                    <img src="img/desktop-logo.png" alt="" />
-
-                    <a className="full_link" href="/" />
+                    <Image
+                      src="/img/desktop-logo.png"
+                      width={500}
+                      height={200}
+                      alt=""
+                    />
+                    <Link href="/">
+                      <a className="full_link" />
+                    </Link>
                   </div>
                 </li>
                 <li>
-                  <a href="/">Home</a>
+                  <Link href="/">
+                    <a>{content[locale].home}</a>
+                  </Link>
                 </li>
                 <li className="shape">
-                  <a href="/project">Projects</a>
+                  <Link href="/projects">
+                    <a>Projects</a>
+                  </Link>
                   <div className="submenu_wrap">
                     <ul>
                       <li>
-                        <a href="/project">Project</a>
+                        <Link href="/project">
+                          <a>Project</a>
+                        </Link>
                       </li>
                       <li>
                         <a href="/project-single">Project Single</a>
