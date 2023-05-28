@@ -63,22 +63,22 @@ export default function TopBar({ isTopbar, activeTopbar }) {
               <ul>
                 <li className={isTopbar !== 0 ? "opened" : ""}>
                   <a href="#" onClick={() => activeTopbar(1)}>
-                    <img className="svg" src="img/svg/home.svg" alt="" />
+                    <img className="svg" src="/img/svg/home.svg" alt="" />
                   </a>
                 </li>
                 <li className={isTopbar > 0 ? "opened" : ""}>
                   <a href="#" onClick={() => activeTopbar(2)}>
-                    <img className="svg" src="img/svg/message2.svg" alt="" />
+                    <img className="svg" src="/img/svg/message2.svg" alt="" />
                   </a>
                 </li>
                 <li className={isTopbar > 0 ? "opened" : ""}>
                   <a href="#" onClick={() => activeTopbar(3)}>
-                    <img className="svg" src="img/svg/old_phone.svg" alt="" />
+                    <img className="svg" src="/img/svg/old_phone.svg" alt="" />
                   </a>
                 </li>
                 <li className={isTopbar > 0 ? "opened" : ""}>
                   <a href="#" onClick={() => activeTopbar(4)}>
-                    <img className="svg" src="img/svg/clock.svg" alt="" />
+                    <img className="svg" src="/img/svg/clock.svg" alt="" />
                   </a>
                 </li>
               </ul>

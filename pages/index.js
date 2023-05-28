@@ -31,10 +31,10 @@ export default function Home() {
         <Certificates />
         <HomeBlog />
 
-        <Responsibility />
+        {/* <Responsibility /> */}
         {/* <Principles /> */}
 
-        <HomeProject />
+        {/* <HomeProject /> */}
       </Layout>
     </>
   );

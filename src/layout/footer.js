@@ -142,14 +142,11 @@ export default function Footer() {
             </div>
             <div className="copyright">
               <p>
-                © 1934 - 2022{" "}
+                © 2023{" "}
                 <Link href="#">
-                  <a className="constructify">Glax, LCC</a>
+                  <a className="constructify">Amper, LCC</a>
                 </Link>
                 . All rights reserved.{" "}
-                <Link href="https://themeforest.net/user/trendycoder">
-                  <a className="trendycoder">TrendyCoder</a>
-                </Link>
               </p>
               <Link href="#">
                 <a className="glax_tm_totop">

@@ -25,7 +25,7 @@ export default function MobileBar() {
                   <li data-type="home">
                     <Link href="#">
                       <a onClick={() => activeMobileTopbar(1)}>
-                        <img className="svg" src="img/svg/home.svg" alt="" />
+                        <img className="svg" src="/img/svg/home.svg" alt="" />
                       </a>
                     </Link>
                   </li>
@@ -34,7 +34,7 @@ export default function MobileBar() {
                       <a onClick={() => activeMobileTopbar(2)}>
                         <img
                           className="svg"
-                          src="img/svg/message2.svg"
+                          src="/img/svg/message2.svg"
                           alt=""
                         />
                       </a>
@@ -45,7 +45,7 @@ export default function MobileBar() {
                       <a onClick={() => activeMobileTopbar(3)}>
                         <img
                           className="svg"
-                          src="img/svg/old-phone.svg"
+                          src="/img/svg/old-phone.svg"
                           alt=""
                         />
                       </a>
@@ -54,7 +54,7 @@ export default function MobileBar() {
                   <li data-type="clock">
                     <Link href="#">
                       <a onClick={() => activeMobileTopbar(4)}>
-                        <img className="svg" src="img/svg/clock.svg" alt="" />
+                        <img className="svg" src="/img/svg/clock.svg" alt="" />
                       </a>
                     </Link>
                   </li>

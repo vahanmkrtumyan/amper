@@ -2863,6 +2863,32 @@ img.svg {
 /*	12) GLAX HOME BLOG
 /*------------------------------------------------------------------*/
 
+.product_list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.product_list li {
+  position: relative;
+  list-style: none;
+  padding-left: 20px;
+}
+
+.product_list ul li:before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 2px;
+  background-color: #666;
+  top: 50%;
+  left: 0px;
+}
+
+.product_list a {
+  text-decoration: none;
+  color: #666;
+}
+
 .glax_tm_home_blog_wrap,
 .glax_tm_home_blog_wrap .inner_wrap,
 .glax_tm_home_blog_wrap .inner_wrap .blog_title_holder {
