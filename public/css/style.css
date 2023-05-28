@@ -494,7 +494,7 @@ img.svg {
   font-family: "Montserrat";
 }
 .prev_next {
-  display: none;
+  display: inline-block;
   transform: rotate(180deg);
 }
 .prev_next > div {
@@ -1763,11 +1763,8 @@ img.svg {
   border: 10px solid #ad3110;
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex-direction: column;
   padding: 13px 20px 10px 18px;
-  color: #f5f5f5;
-  font-size: 20px;
 }
 .glax_tm_introduce_wrap .experience_box .top p {
   margin: 0px;
@@ -1781,12 +1778,12 @@ img.svg {
   font-family: "Rubik";
 }
 .glax_tm_introduce_wrap .experience_box .bottom {
-  display: flex;
+  /* display: flex; */
   align-items: center;
 }
 .glax_tm_introduce_wrap .experience_box .bottom .number span {
   font-family: "Rubik";
-  font-size: 72px;
+  font-size: 48px;
   color: #fff;
   letter-spacing: -0.25px;
   line-height: 1;
@@ -1794,7 +1791,7 @@ img.svg {
 }
 .glax_tm_introduce_wrap .experience_box .bottom .definition {
   font-family: "Montserrat";
-  font-size: 10px;
+  font-size: 16px;
   color: #ad3110;
   text-transform: uppercase;
   padding-left: 4px;
@@ -2047,7 +2044,7 @@ img.svg {
   width: 50%;
   height: auto;
   position: relative;
-  padding: 144px 20px 150px 0px;
+  padding: 50px 20px 50px 0px;
 }
 .glax_tm_rating_wrap .inner .leftbox .title {
   margin-bottom: 25px;
@@ -2065,6 +2062,11 @@ img.svg {
 .glax_tm_rating_wrap .inner .leftbox .text p {
   color: #ccc;
   line-height: 1.7;
+}
+.glax_tm_rating_wrap .inner .leftbox .subTitle p {
+  color: #ccc;
+  line-height: 1.7;
+  font-size: 20px;
 }
 .glax_tm_project_video {
   float: left;
@@ -2250,7 +2252,7 @@ img.svg {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../img/portfolio/10.jpg);
+  background-image: url(../img/portfolio/10.png);
 }
 
 /*------------------------------------------------------------------*/
@@ -2373,9 +2375,12 @@ img.svg {
   padding: 20px 0px 0px 20px;
 }
 .glax_tm_principles_wrap .list_wrap ul li .inner .in {
-  padding: 45px 70px 82px 40px;
+  padding: 30px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
-  min-height: 300px;
+  min-height: 375px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .glax_tm_principles_wrap .list_wrap ul li .inner .title {
   margin-bottom: 19px;
@@ -2587,6 +2592,21 @@ img.svg {
   line-height: 2.3;
 }
 .glax_tm_main_responsibility_wrap .experience_list ul li:before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 2px;
+  background-color: #999;
+  top: 50%;
+  left: 0px;
+}
+
+.glax_tm_home_blog_wrap .experience_list ul li span {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 2.3;
+}
+.glax_tm_home_blog_wrap .experience_list ul li:before {
   position: absolute;
   content: "";
   width: 10px;
@@ -2848,8 +2868,8 @@ img.svg {
 .glax_tm_home_blog_wrap .inner_wrap .blog_title_holder {
   width: 100%;
   height: auto;
-  clear: both;
-  float: left;
+  /* clear: both;
+  float: left; */
 }
 .glax_tm_home_blog_wrap .inner_wrap {
   padding: 140px 0px 105px 0px;
