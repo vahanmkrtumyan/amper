@@ -135,6 +135,54 @@ const products = {
   },
 };
 
+const content = {
+  ru: {
+    first: "Тип трансформатора, класс напряжения:",
+    kv: "кВ",
+    second: "Номинальная мощность:",
+    third: "Параметры напряжения ВН",
+    fourth: "Параметры напряжения Диапазон регулирования",
+    fifth: "Параметры напряжения НН",
+    sixth: "Схема соединения обмоток",
+    seventh: "Мощность потерь х.х. Вт",
+    eight: "Мощность потерь к.з. Вт",
+    ninth: "Ток х.х.",
+    tenth: "Напряжение к.з.",
+    eleventh: "Масса масла кг",
+    tweleve: "Полная масса трансформатора кг",
+  },
+  hy: {
+    first: "Տրանսֆորմատորի տեսակը, լարման դասը.",
+    kv: "կՎ",
+    second: "Անվանական հզորություն:",
+    third: "Լարման պարամետրեր ԲԼ",
+    fourth: "Լարման պարամետրեր Կարգավորման տիրույթ",
+    fifth: "Լարման պարամետրեր ՑԼ",
+    sixth: "Փաթաթման միացման դիագրամ",
+    seventh: "Պարապ վիճակի հոսանքի կորուստ Վտ",
+    eight: "Կարճ միացման հոսանքի կորուստ Վտ",
+    ninth: "Պարապ վիճակի լարում",
+    tenth: "Կարճ միացման լարում",
+    eleventh: "Յուղի զանգված կգ",
+    tweleve: "Տրանսֆորմատորի համախառն քաշը կգ",
+  },
+  en: {
+    first: "Transformer type, voltage class:",
+    kv: "kV",
+    second: "Nominal power:",
+    third: "Voltage parameters HV",
+    fourth: "Voltage parameters Adjustment range",
+    fifth: "Voltage parameters LV",
+    sixth: "Winding connection diagram",
+    seventh: "Idle power loss Wt",
+    eight: "Short circuit power loss Wt",
+    ninth: "Idle Current",
+    tenth: "Short circuit Current",
+    eleventh: "Oil mass kg",
+    tweleve: "Gross transformer weight kg",
+  },
+};
+
 export default function Product() {
   const { locale, query } = useRouter();
   console.log(query.id);
@@ -144,65 +192,67 @@ export default function Product() {
         <div>
           <div className="glax_tm_section" style={{ padding: "50px" }}>
             <div>
-              Тип трансформатора, класс напряжения:{" "}
+              {content[locale].first}{" "}
               <span style={{ color: "#45a2df" }}>
                 {products[query.id]?.name}
               </span>
             </div>
             <div>
-              Номинальная мощность
+              {content[locale].second}{" "}
               <span style={{ color: "#45a2df" }}>
-                {products[query.id]?.power} кВ
+                {products[query.id]?.power} {products[query.id]?.kv}
               </span>
             </div>
             <div>
-              Параметры напряжения ВН
-              <span style={{ color: "#45a2df" }}>10, 6 кВ</span>
+              {content[locale].third}:{" "}
+              <span style={{ color: "#45a2df" }}>
+                10, 6 {products[query.id]?.kv}
+              </span>
             </div>
             <div>
-              Параметры напряжения Диапазон регулирования:{" "}
+              {content[locale].fourth}:{" "}
               <span style={{ color: "#45a2df" }}>±2×2.5 %</span>
             </div>
             <div>
-              Параметры напряжения НН:{" "}
-              <span style={{ color: "#45a2df" }}>0.4 кВ</span>
+              {content[locale].fifth}:{" "}
+              <span style={{ color: "#45a2df" }}>0.4 {content[locale].kv}</span>
             </div>
             <div>
-              Схема соединения обмоток:{" "}
+              {content[locale].sixth}:{" "}
               <span style={{ color: "#45a2df" }}>Y/Yн-0</span>
             </div>
             <div>
-              Мощность потерь х.х. Вт:{" "}
+              {content[locale].seventh}:{" "}
               <span style={{ color: "#45a2df" }}>
                 {products[query.id]?.mpxx}
               </span>
             </div>
             <div>
-              Мощность потерь к.з. Вт:{" "}
+              {content[locale].eight}:{" "}
               <span style={{ color: "#45a2df" }}>
                 {products[query.id]?.mpkz}
               </span>
             </div>
             <div>
-              Ток х.х. %:{" "}
+              {content[locale].ninth} %:{" "}
               <span style={{ color: "#45a2df" }}>
                 {products[query.id]?.tokxx}
               </span>
             </div>
             <div>
-              Напряжение к.з. %:{" "}
+              {content[locale].tenth} %:{" "}
               <span style={{ color: "#45a2df" }}>
                 {products[query.id]?.napr}
               </span>
             </div>
             <div>
-              Масса масла кг:{" "}
+              {content[locale].eleventh}:{" "}
               <span style={{ color: "#45a2df" }}>
                 {products[query.id]?.oil}
               </span>
             </div>
             <div>
-              Полная масса трансформатора кг:{" "}
+              {content[locale].tweleve}:{" "}
               <span style={{ color: "#45a2df" }}>
                 {products[query.id]?.massa}
               </span>
