@@ -1,9 +1,54 @@
 import Link from "next/link";
 import React from "react";
 import { Parallax } from "react-parallax";
+import { useRouter } from "next/router";
+
 // import image5 from './img/slider/5.jpg'
 
+const content = {
+  en: {
+    mondayFriday: "Monday-Friday",
+    hours: "10am to 7pm",
+    weekEnd: "Saturday-Sunday",
+    closed: "Closed",
+    home: "Home",
+    clients: "Clients",
+    about: "About us",
+    products: "Our products",
+    certificates: "Certificates",
+    workingHours: "Working Hours",
+    links: "Helpful Links",
+  },
+  hy: {
+    mondayFriday: "Երկուշաբթի-ուրբաթ",
+    hours: "10:00-19:00",
+    weekEnd: "Շաբաթ-կիրակի",
+    closed: "Փակ է",
+    home: "Գլխավոր",
+    clients: "Մեր հաճախորդները",
+    about: "Մեր մասին",
+    products: "Արտադրանք",
+    certificates: "Սերտիֆիկատներ",
+    workingHours: "Աշխատանքային ժամեր",
+    links: "Օգտակար հղումներ",
+  },
+  ru: {
+    mondayFriday: "Понедельник-Пятница",
+    hours: "10:00-19:00",
+    weekEnd: "Суббота-Воскресенье",
+    closed: "Закрыто",
+    home: "Главное",
+    clients: "Наши клиенты",
+    about: "О нас",
+    products: "Продукция",
+    workingHours: "Рабочие часы",
+    links: "Полезные ссылки",
+  },
+};
+
 export default function Footer() {
+  const { locale, push, pathname } = useRouter();
+
   return (
     <>
       <footer className="glax_tm_footer_wrap">
@@ -18,47 +63,35 @@ export default function Footer() {
               <div className="container">
                 <div
                   className="glax_tm_list_wrap footer"
-                  data-column={3}
+                  data-column={2}
                   data-space={40}
                 >
                   <ul className="glax_list">
                     <li>
                       <div className="inner">
                         <div className="footer_section_title">
-                          <h3>About Company</h3>
-                        </div>
-                        <div className="definition">
-                          <p>
-                            We are an award winning construction company focused
-                            on user-driven outcomes. We strive to create
-                            meaningful connections for users through considered.
-                          </p>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="inner">
-                        <div className="footer_section_title">
-                          <h3>Business Hours</h3>
+                          <h3>{content[locale].workingHours}</h3>
                         </div>
                         <div className="inner_list">
                           <ul>
                             <li>
                               <div className="wrap">
-                                <span className="left">Monday-Friday:</span>
-                                <span className="right">9am to 5pm</span>
+                                <span className="left">
+                                  {content[locale].mondayFriday}:
+                                </span>
+                                <span className="right">
+                                  {content[locale].hours}
+                                </span>
                               </div>
                             </li>
                             <li>
                               <div className="wrap">
-                                <span className="left">Saturday:</span>
-                                <span className="right">10am to 3pm</span>
-                              </div>
-                            </li>
-                            <li>
-                              <div className="wrap">
-                                <span className="left">Sunday:</span>
-                                <span className="right">Closed</span>
+                                <span className="left">
+                                  {content[locale].weekEnd}:
+                                </span>
+                                <span className="right">
+                                  {content[locale].closed}
+                                </span>
                               </div>
                             </li>
                           </ul>
@@ -74,29 +107,52 @@ export default function Footer() {
                           <div className="inner_list">
                             <ul>
                               <li>
-                                <Link href="#">
-                                  <a>Our services</a>
-                                </Link>
+                                <a
+                                  onClick={() => {
+                                    push({
+                                      pathname: "/",
+                                      hash: "clients",
+                                    });
+                                  }}
+                                >
+                                  {content[locale].clients}
+                                </a>
                               </li>
                               <li>
-                                <Link href="#">
-                                  <a>Diclaimer</a>
-                                </Link>
+                                <a
+                                  onClick={() => {
+                                    push({
+                                      pathname: "/",
+                                      hash: "certificates",
+                                    });
+                                  }}
+                                >
+                                  {content[locale].certificates}
+                                </a>
                               </li>
                               <li>
-                                <Link href="#">
-                                  <a>Showcase</a>
-                                </Link>
+                                <a
+                                  onClick={() => {
+                                    push({
+                                      pathname: "/",
+                                      hash: "about",
+                                    });
+                                  }}
+                                >
+                                  {content[locale].about}
+                                </a>
                               </li>
                               <li>
-                                <Link href="#">
-                                  <a>Privacy Policy</a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="#">
-                                  <a>Affliates</a>
-                                </Link>
+                                <a
+                                  onClick={() => {
+                                    push({
+                                      pathname: "/",
+                                      hash: "products",
+                                    });
+                                  }}
+                                >
+                                  {content[locale].products}
+                                </a>
                               </li>
                             </ul>
                           </div>
@@ -111,35 +167,7 @@ export default function Footer() {
         </Parallax>
         <div className="bottom_wrap">
           <div className="container">
-            <div className="links_wrap">
-              <ul>
-                <li>
-                  <Link href="#">
-                    <a>Services</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#">
-                    <a>Affliates</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#">
-                    <a>Disclaimer</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#">
-                    <a>Privacy Policy</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#">
-                    <a>Career</a>
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <div className="links_wrap"></div>
             <div className="copyright">
               <p>
                 © 2023{" "}
@@ -151,7 +179,6 @@ export default function Footer() {
               <Link href="#">
                 <a className="glax_tm_totop">
                   <span className="shape" />
-                  <span className="name">To Top</span>
                 </a>
               </Link>
             </div>

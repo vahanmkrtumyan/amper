@@ -57,6 +57,11 @@ img.svg {
   width: 15px;
   height: 15px;
 }
+
+a {
+  cursor: pointer;
+}
+
 .glax_tm_sticky_section {
   position: -webkit-sticky;
   position: -moz-sticky;

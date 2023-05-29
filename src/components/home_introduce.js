@@ -25,7 +25,7 @@ export default function HomeIntroduce() {
     <>
       <div className="glax_tm_section introduce">
         <div className="container">
-          <div className="qqq">
+          <div className="qqq" id="about">
             <div className="glax_tm_introduce_wrap">
               <div className="inner_wrap">
                 <div className="main_info_wrap">

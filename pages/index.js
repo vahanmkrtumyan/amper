@@ -20,7 +20,9 @@ export default function Home() {
         <HeroHeader />
         {/* /HERO HEADER */}
         {/* HOME INTRODUCE */}
+
         <HomeIntroduce />
+
         {/* /HOME INTRODUCE */}
         {/* HOME SERVICE */}
         <Partners />

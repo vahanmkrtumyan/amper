@@ -12,7 +12,7 @@ export default function HomeBlog() {
 
   return (
     <>
-      <div className="glax_tm_section">
+      <div className="glax_tm_section" id="products">
         <div className="glax_tm_home_blog_wrap">
           <div className="container">
             <div className="inner_wrap">

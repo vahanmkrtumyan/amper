@@ -4,13 +4,30 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 const content = {
-  en: { home: "Home" },
-  hy: { home: "Գլխավոր" },
-  ru: { home: "Главное" },
+  en: {
+    home: "Home",
+    clients: "Clients",
+    about: "About us",
+    products: "Our products",
+    certificates: "Certificates",
+  },
+  hy: {
+    home: "Գլխավոր",
+    clients: "Մեր հաճախորդները",
+    about: "Մեր մասին",
+    products: "Արտադրանք",
+    certificates: "Սերտիֆիկատներ",
+  },
+  ru: {
+    home: "Главное",
+    clients: "Наши клиенты",
+    about: "О нас",
+    products: "Продукция",
+  },
 };
 
 export default function Header({ style }) {
-  const { locale, push, pathname } = useRouter();
+  const { locale, push } = useRouter();
   return (
     <>
       {/* HEADER */}
@@ -41,54 +58,54 @@ export default function Header({ style }) {
                     <a>{content[locale].home}</a>
                   </Link>
                 </li>
-                <li className="shape">
-                  <Link href="/projects">
-                    <a>Projects</a>
-                  </Link>
-                  <div className="submenu_wrap">
-                    <ul>
-                      <li>
-                        <Link href="/project">
-                          <a>Project</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <a href="/project-single">Project Single</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li className="shape">
-                  <a href="/service">Services</a>
-                  <div className="submenu_wrap">
-                    <ul>
-                      <li>
-                        <a href="/service">Service</a>
-                      </li>
-                      <li>
-                        <a href="/service-single">Service Single</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li className="shape">
-                  <a href="/blog">News</a>
-                  <div className="submenu_wrap">
-                    <ul>
-                      <li>
-                        <a href="/blog">News</a>
-                      </li>
-                      <li>
-                        <a href="/blog-single">News Single</a>
-                      </li>
-                    </ul>
-                  </div>
+
+                <li>
+                  <a
+                    onClick={() => {
+                      push({
+                        pathname: "/",
+                        hash: "clients",
+                      });
+                    }}
+                  >
+                    {content[locale].clients}
+                  </a>
                 </li>
                 <li>
-                  <a href="/about">About</a>
+                  <a
+                    onClick={() => {
+                      push({
+                        pathname: "/",
+                        hash: "certificates",
+                      });
+                    }}
+                  >
+                    Certificates
+                  </a>
                 </li>
                 <li>
-                  <a href="/contact">Contact</a>
+                  <a
+                    onClick={() => {
+                      push({
+                        pathname: "/",
+                        hash: "about",
+                      });
+                    }}
+                  >
+                    {content[locale].about}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    onClick={() => {
+                      push({
+                        pathname: "/",
+                        hash: "products",
+                      });
+                    }}
+                  >
+                    {content[locale].products}
+                  </a>
                 </li>
               </ul>
             </div>

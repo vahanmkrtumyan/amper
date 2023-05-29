@@ -30,7 +30,7 @@ export default function Principles() {
 
   return (
     <>
-      <div className="glax_tm_section">
+      <div className="glax_tm_section" id="clients">
         <div className="glax_tm_principles_wrapper_all">
           <div className="container">
             <div className="glax_tm_twice_box_wrap">
