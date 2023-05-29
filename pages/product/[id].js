@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import Layout from "../../src/layout/layout";
 
@@ -183,6 +183,20 @@ const content = {
   },
 };
 
+const images = {
+  "25-10": "/img/product/25.png",
+  "40-10": "/img/product/40.png",
+  "63-10": "/img/product/63.png",
+  "100-10": "/img/product/100.png",
+  "160-10": "/img/product/160.png",
+  "250-10": "/img/product/250.png",
+  "400-10": "/img/product/400.png",
+  "630-10": "/img/product/630.png",
+  "1000-10": "/img/product/1000.png",
+  "1600-10": "/img/product/1600.png",
+  "2500-10": "/img/product/2500.png",
+};
+
 export default function Product() {
   const { locale, query } = useRouter();
   console.log(query.id);
@@ -190,72 +204,90 @@ export default function Product() {
     <>
       <Layout style={"light"}>
         <div>
-          <div className="glax_tm_section" style={{ padding: "50px" }}>
-            <div>
-              {content[locale].first}{" "}
-              <span style={{ color: "#45a2df" }}>
-                {products[query.id]?.name}
-              </span>
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              justifyContent: "space-around",
+            }}
+          >
+            <div style={{ padding: "50px" }}>
+              <div>
+                {content[locale].first}{" "}
+                <span style={{ color: "#45a2df" }}>
+                  {products[query.id]?.name}
+                </span>
+              </div>
+              <div>
+                {content[locale].second}{" "}
+                <span style={{ color: "#45a2df" }}>
+                  {products[query.id]?.power} {products[query.id]?.kv}
+                </span>
+              </div>
+              <div>
+                {content[locale].third}:{" "}
+                <span style={{ color: "#45a2df" }}>
+                  10, 6 {products[query.id]?.kv}
+                </span>
+              </div>
+              <div>
+                {content[locale].fourth}:{" "}
+                <span style={{ color: "#45a2df" }}>±2×2.5 %</span>
+              </div>
+              <div>
+                {content[locale].fifth}:{" "}
+                <span style={{ color: "#45a2df" }}>
+                  0.4 {content[locale].kv}
+                </span>
+              </div>
+              <div>
+                {content[locale].sixth}:{" "}
+                <span style={{ color: "#45a2df" }}>Y/Yн-0</span>
+              </div>
+              <div>
+                {content[locale].seventh}:{" "}
+                <span style={{ color: "#45a2df" }}>
+                  {products[query.id]?.mpxx}
+                </span>
+              </div>
+              <div>
+                {content[locale].eight}:{" "}
+                <span style={{ color: "#45a2df" }}>
+                  {products[query.id]?.mpkz}
+                </span>
+              </div>
+              <div>
+                {content[locale].ninth} %:{" "}
+                <span style={{ color: "#45a2df" }}>
+                  {products[query.id]?.tokxx}
+                </span>
+              </div>
+              <div>
+                {content[locale].tenth} %:{" "}
+                <span style={{ color: "#45a2df" }}>
+                  {products[query.id]?.napr}
+                </span>
+              </div>
+              <div>
+                {content[locale].eleventh}:{" "}
+                <span style={{ color: "#45a2df" }}>
+                  {products[query.id]?.oil}
+                </span>
+              </div>
+              <div>
+                {content[locale].tweleve}:{" "}
+                <span style={{ color: "#45a2df" }}>
+                  {products[query.id]?.massa}
+                </span>
+              </div>
             </div>
             <div>
-              {content[locale].second}{" "}
-              <span style={{ color: "#45a2df" }}>
-                {products[query.id]?.power} {products[query.id]?.kv}
-              </span>
-            </div>
-            <div>
-              {content[locale].third}:{" "}
-              <span style={{ color: "#45a2df" }}>
-                10, 6 {products[query.id]?.kv}
-              </span>
-            </div>
-            <div>
-              {content[locale].fourth}:{" "}
-              <span style={{ color: "#45a2df" }}>±2×2.5 %</span>
-            </div>
-            <div>
-              {content[locale].fifth}:{" "}
-              <span style={{ color: "#45a2df" }}>0.4 {content[locale].kv}</span>
-            </div>
-            <div>
-              {content[locale].sixth}:{" "}
-              <span style={{ color: "#45a2df" }}>Y/Yн-0</span>
-            </div>
-            <div>
-              {content[locale].seventh}:{" "}
-              <span style={{ color: "#45a2df" }}>
-                {products[query.id]?.mpxx}
-              </span>
-            </div>
-            <div>
-              {content[locale].eight}:{" "}
-              <span style={{ color: "#45a2df" }}>
-                {products[query.id]?.mpkz}
-              </span>
-            </div>
-            <div>
-              {content[locale].ninth} %:{" "}
-              <span style={{ color: "#45a2df" }}>
-                {products[query.id]?.tokxx}
-              </span>
-            </div>
-            <div>
-              {content[locale].tenth} %:{" "}
-              <span style={{ color: "#45a2df" }}>
-                {products[query.id]?.napr}
-              </span>
-            </div>
-            <div>
-              {content[locale].eleventh}:{" "}
-              <span style={{ color: "#45a2df" }}>
-                {products[query.id]?.oil}
-              </span>
-            </div>
-            <div>
-              {content[locale].tweleve}:{" "}
-              <span style={{ color: "#45a2df" }}>
-                {products[query.id]?.massa}
-              </span>
+              <Image
+                src={images[query?.id || "25-10"] || ""}
+                width={500}
+                height={900}
+                alt=""
+              />
             </div>
           </div>
         </div>

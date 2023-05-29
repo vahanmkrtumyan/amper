@@ -81,7 +81,7 @@ export default function Header({ style }) {
                       });
                     }}
                   >
-                    Certificates
+                    {content[locale].certificates}
                   </a>
                 </li>
                 <li>
