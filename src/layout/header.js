@@ -23,6 +23,7 @@ const content = {
     clients: "Наши клиенты",
     about: "О нас",
     products: "Продукция",
+    certificates: "Сертификаты",
   },
 };
 

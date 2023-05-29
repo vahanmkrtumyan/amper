@@ -1,8 +1,52 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import HelpfulContactForm from "../components/helpful_contact_form";
+import { useRouter } from "next/router";
+
+const content = {
+  en: {
+    mondayFriday: "Monday-Friday",
+    hours: "10am to 7pm",
+    weekEnd: "Saturday-Sunday",
+    closed: "Closed",
+    home: "Home",
+    clients: "Clients",
+    about: "About us",
+    products: "Our products",
+    certificates: "Certificates",
+    workingHours: "Working Hours",
+    links: "Helpful Links",
+  },
+  hy: {
+    mondayFriday: "Երկուշաբթի-ուրբաթ",
+    hours: "10:00-19:00",
+    weekEnd: "Շաբաթ-կիրակի",
+    closed: "Փակ է",
+    home: "Գլխավոր",
+    clients: "Մեր հաճախորդները",
+    about: "Մեր մասին",
+    products: "Արտադրանք",
+    certificates: "Սերտիֆիկատներ",
+    workingHours: "Աշխատանքային ժամեր",
+    links: "Օգտակար հղումներ",
+  },
+  ru: {
+    mondayFriday: "Понедельник-Пятница",
+    hours: "10:00-19:00",
+    weekEnd: "Суббота-Воскресенье",
+    closed: "Закрыто",
+    home: "Главное",
+    clients: "Наши клиенты",
+    about: "О нас",
+    products: "Продукция",
+    workingHours: "Рабочие часы",
+    links: "Полезные ссылки",
+    certificates: "Сертификаты",
+  },
+};
 
 export default function MobileBar() {
+  const { locale, push, pathname } = useRouter();
   const [isMobileTopbar, setMobileTopbar] = useState(0);
   const activeMobileTopbar = (index) => {
     setMobileTopbar(index);
@@ -116,57 +160,57 @@ export default function MobileBar() {
           <ul className="nav">
             <li>
               <Link href="/">
-                <a>Homepage</a>
+                <a>{content[locale].home}</a>
               </Link>
             </li>
             <li>
-              <Link href="/project">
-                <a>Projects</a>
-              </Link>
-              <ul className="sub_menu">
-                <li>
-                  <Link href="/project">
-                    <a>Project</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/project-single">
-                    <a>Project Single</a>
-                  </Link>
-                </li>
-              </ul>
+              <a
+                onClick={() => {
+                  push({
+                    pathname: "/",
+                    hash: "clients",
+                  });
+                }}
+              >
+                {content[locale].clients}
+              </a>
             </li>
             <li>
-              <Link href="/service">
-                <a>Our Services</a>
-              </Link>
-              <ul className="sub_menu">
-                <li>
-                  <Link href="/service">
-                    <a>Service</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/service-single">
-                    <a>Service Single</a>
-                  </Link>
-                </li>
-              </ul>
+              <a
+                onClick={() => {
+                  push({
+                    pathname: "/",
+                    hash: "certificates",
+                  });
+                }}
+              >
+                {content[locale].certificates}
+              </a>
             </li>
             <li>
-              <Link href="/blog">
-                <a>Blog</a>
-              </Link>
+              <a
+                onClick={() => {
+                  push({
+                    pathname: "/",
+                    hash: "about",
+                  });
+                }}
+              >
+                {content[locale].about}
+              </a>
             </li>
+
             <li>
-              <Link href="/about">
-                <a>About Us</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact">
-                <a>Contact</a>
-              </Link>
+              <a
+                onClick={() => {
+                  push({
+                    pathname: "/",
+                    hash: "products",
+                  });
+                }}
+              >
+                {content[locale].products}
+              </a>
             </li>
           </ul>
         </div>

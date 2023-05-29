@@ -43,6 +43,7 @@ const content = {
     products: "Продукция",
     workingHours: "Рабочие часы",
     links: "Полезные ссылки",
+    certificates: "Сертификаты",
   },
 };
 
@@ -101,7 +102,7 @@ export default function Footer() {
                     <li>
                       <div className="inner">
                         <div className="footer_section_title">
-                          <h3>Helpful Links</h3>
+                          <h3>{content[locale].links}</h3>
                         </div>
                         <div className="helpful_links">
                           <div className="inner_list">
