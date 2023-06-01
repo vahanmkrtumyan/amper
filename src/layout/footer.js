@@ -55,7 +55,7 @@ export default function Footer() {
       <footer className="glax_tm_footer_wrap">
         <Parallax
           className="glax_tm_universal_parallax_wrap"
-          bgImage="img/slider/5.jpg"
+          // bgImage="img/slider/5.jpg"
           strength={300}
         >
           <div className="main_content footer">
