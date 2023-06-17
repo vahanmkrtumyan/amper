@@ -227,7 +227,7 @@ export default function Product() {
               <div>
                 {content[locale].third}:{" "}
                 <span style={{ color: "#45a2df" }}>
-                  10, 6 {products[query.id]?.kv}
+                  10{products[query.id]?.kv}, 6{products[query.id]?.kv}
                 </span>
               </div>
               <div>
@@ -282,10 +282,9 @@ export default function Product() {
               </div>
             </div>
             <div>
-              <Image
+              <img
                 src={images[query?.id || "25-10"] || ""}
-                width={500}
-                height={900}
+                style={{ width: "500px", paddingBottom: "20px" }}
                 alt=""
               />
             </div>

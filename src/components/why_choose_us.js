@@ -114,7 +114,7 @@ export default function WhyChooseUs() {
                   <p>{content[locale].seventhTitle}</p>
                 </div>
                 <div className="text">
-                  <p>{content[locale].seven}</p>
+                  <p>{content[locale].seventh}</p>
                 </div>
                 <div className="subTitle">
                   <p>{content[locale].eightTitle}</p>
