@@ -86,7 +86,7 @@ export default function Siderbar({ isTopbar, activeTopbar }) {
                 <div className="definitions_wrap">
                   <h3>{content[locale].addressLabel}</h3>
                   <p>{content[locale].address}</p>
-                  <p>{content[locale].phone}: +374 77 905885</p>
+                  <p>{content[locale].phone}: +374 95 100201</p>
                   <p>
                     <span>{content[locale].email}:</span>
                     <a href="#">contact@tga-amper.am</a>
@@ -142,7 +142,7 @@ export default function Siderbar({ isTopbar, activeTopbar }) {
                 </div>
                 <h3>{content[locale].phone}</h3>
                 <p>
-                  <a href="tel:37477905885">+374 77 905885</a>
+                  <a href="tel:37495100201">+374 95 100201</a>
                 </p>
               </div>
             </div>
